@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Marcellus:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+body {
+  font-family: 'Marcellus', sans-serif;
+  background-color: #f4f0ec;
+}
+
+a, a:visited {
+  color: #6060ff;
+}
+
+summary {
+  color: #6060ff;
+  cursor: pointer;
+}
+
+a:hover, summary:hover {
+  color: #a0a0ff;
+}
+
+div, main, footer, img, video {
+  border-radius: 12px;
+}
+
+body>div {
+  width: max(66%, 1024px);
+  margin: 1em auto;
+  display: grid;
+  grid-template-columns: 2fr 5fr;
+  column-gap: 1em;
+}
+
+img {
+  width: 100%;
+}
+
+main {
+  padding: 1em;
+  /* border: 1px solid #c0c0c0; */
+  margin-bottom: 1em;
+  background: linear-gradient(#ffffffff, #ffffffff);
+}
+
+main>:first-child {
+  margin-top: 0;
+}
+
+footer {
+  background: linear-gradient(#ffffffff, #ffffffff);
+  padding-top: 1em;
+}
+
+footer p {
+  margin: 0 1em 1em;
+  font-style: italic;
+}
+
+h1, h2 {
+  font-weight: normal;
+}
+
+h1 {
+  width: max(66%, 1024px);
+  margin: 1rem auto;
+  font-size: 3em;
+  letter-spacing: 2px;
+}
+
+h2 {
+  font-size: 2em;
+  margin: 1rem auto 1rem;
+}
+
+details {
+  display: inline;
+}
+
+details[open] {
+  margin-top: 1em;
+}
+
+details[open]>summary {
+  margin-bottom: 1em;
+}
+
+details ul {
+  font-style: italic;
+}
+
+li {
+  margin-right: 2em;
+  margin-bottom: 1em;
+}
+
+strong {
+  font-weight: normal;
+  text-shadow: 1px 0px black;
+}
