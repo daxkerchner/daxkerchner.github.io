@@ -27,7 +27,27 @@ body>div {
   margin: 1em auto;
   display: grid;
   grid-template-columns: 2fr 5fr;
-  column-gap: 1em;
+  gap: 1em;
+}
+
+body>div>:first-child {
+  grid-column-end: span 2;
+}
+
+@media (max-width: 1023px) {
+  body>div {
+    width: 100%;
+    grid-template-columns: 2fr 3fr;
+  }
+  .photo {
+    order: -1;
+  }
+  body>div>:first-child {
+    grid-column-end: span 1;
+  }
+  body>div>:last-child {
+    grid-column-end: span 2;
+  }
 }
 
 img {
@@ -60,8 +80,7 @@ h1, h2 {
 }
 
 h1 {
-  width: max(66%, 1024px);
-  margin: 1rem auto;
+  margin: 0;
   font-size: 3em;
   letter-spacing: 2px;
 }
