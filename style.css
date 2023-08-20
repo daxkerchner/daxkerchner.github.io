@@ -160,6 +160,13 @@ form>div {
   display: flex;
   gap: 1em;
   align-items: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 1023px) {
+  form>div>* {
+    width: 100%;
+  }
 }
 
 form>div>input {
@@ -168,6 +175,7 @@ form>div>input {
 
 form>label {
   margin-top: 1em;
+  margin-bottom: 1em;
 }
 
 input, textarea {
