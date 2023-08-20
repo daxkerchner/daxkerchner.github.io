@@ -106,12 +106,22 @@ details ul {
   font-style: italic;
 }
 
+ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
 li {
-  margin-right: 2em;
+  margin-right: 1em;
   margin-bottom: 1em;
 }
 
 strong {
   font-weight: normal;
   text-shadow: 1px 0px black;
+}
+
+.two-panel {
+  display: grid;
+  grid-template-columns: 5fr 1fr;
 }
