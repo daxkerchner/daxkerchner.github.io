@@ -68,6 +68,8 @@ main>:first-child {
 footer {
   background: linear-gradient(#ffffffff, #ffffffff);
   padding-top: 1em;
+  display: flex;
+  flex-direction: column;
 }
 
 footer p {
