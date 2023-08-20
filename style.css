@@ -1,8 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Marcellus:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
-body {
+body, button {
   font-family: 'Marcellus', sans-serif;
   background-color: #f4f0ec;
+}
+
+input, textarea, button {
+  font-family: 'Marcellus', sans-serif;
+  font-size: 1rem;
+  border-radius: 12px;
+  border: 2px solid #d0c0b0;
+}
+
+a {
+  text-decoration: none;
+}
+
+a[target="_blank"] {
+  text-decoration: underline;
 }
 
 a, a:visited {
@@ -18,7 +33,7 @@ a:hover, summary:hover {
   color: #a0a0ff;
 }
 
-div, main, footer, img, video {
+div, main, footer, img, video, form {
   border-radius: 12px;
 }
 
@@ -54,14 +69,13 @@ img {
   width: 100%;
 }
 
-main {
+main, form {
   padding: 1em;
-  /* border: 1px solid #c0c0c0; */
   margin-bottom: 1em;
   background: linear-gradient(#ffffffff, #ffffffff);
 }
 
-main>:first-child {
+main>:first-child, form>:first-child {
   margin-top: 0;
 }
 
@@ -123,7 +137,58 @@ strong {
   text-shadow: 1px 0px black;
 }
 
+strong a {
+  text-shadow: 1px 0px #a0a0ff;
+}
+
 .two-panel {
   display: grid;
   grid-template-columns: 5fr 1fr;
+}
+
+form>* {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+form>p {
+  font-style: italic;
+}
+
+form>div {
+  display: flex;
+  gap: 1em;
+  align-items: center;
+}
+
+form>div>input {
+  flex: 1;
+}
+
+form>label {
+  margin-top: 1em;
+}
+
+input, textarea {
+  padding: 6px 12px;
+}
+
+label {
+  color: #a08060;
+}
+
+button {
+  border: none;
+  background-color: #504030;
+  color: #ffffff;
+  margin: 1em 0 0 auto;
+  padding: .5em;
+  width: 33%;
+  text-shadow: 1px 0px white;
+  cursor: pointer;
+}
+
+button:hover, button:focus {
+  background-color: #a08060;
 }
