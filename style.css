@@ -8,7 +8,7 @@ body, button {
 input, textarea, button {
   font-family: 'Marcellus', sans-serif;
   font-size: 1rem;
-  border-radius: 12px;
+  border-radius: 6px;
   border: 2px solid #d0c0b0;
 }
 
@@ -34,7 +34,7 @@ a:hover, summary:hover {
 }
 
 div, main, footer, img, video, form {
-  border-radius: 12px;
+  border-radius: 6px;
 }
 
 body>div {
