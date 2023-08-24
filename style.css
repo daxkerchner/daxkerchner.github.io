@@ -85,7 +85,7 @@ footer p {
 header {
   display: flex;
   justify-content: space-between;
-  align-items: stretch;
+  align-items: baseline;
 }
 
 nav {
@@ -96,7 +96,6 @@ nav {
 nav>a {
   font-size: 1.5em;
   display: flex;
-  align-items: flex-end;
 }
 
 nav>a, nav>a:visited, label {
@@ -240,7 +239,7 @@ button:hover, button:focus {
 
 /* nav */
 
-input.nav {
+.navdata {
   display: none;
 }
 
@@ -259,25 +258,29 @@ main>div {
   transition: left 250ms linear;
 }
 
-header:has(#work ~ :target) ~ main #work-content,
-header:not(:has(#music:target)) ~ main #music-content,
-header:not(:has(#bio:target)) ~ main #bio-content,
-header:not(:has(#contact:target)) ~ main #contact-content {
+.navdata:has(#work ~ :target) ~ .content #work-content,
+.navdata:not(:has(#music:target)) ~ .content #music-content,
+.navdata:not(:has(#bio:target)) ~ .content #bio-content,
+.navdata:not(:has(#contact:target)) ~ .content #contact-content {
   height: 0;
 }
 
-header:has(#music:target) ~ main>div {
+.navdata:has(#music:target) ~ .content>main>div {
   left: -100%;
 }
 
-header:has(#bio:target) ~ main>div {
+.navdata:has(#bio:target) ~ .content>main>div {
   left: -200%;
 }
 
-header:has(#contact:target) ~ main>div {
+.navdata:has(#contact:target) ~ .content>main>div {
   left: -300%;
 }
 
-nav>a:target, nav>:first-child:not(:has(~ :target)) {
+.navdata:has(#work:target) ~ .content #work-link,
+.navdata:has(#music:target) ~ .content #music-link,
+.navdata:has(#bio:target) ~ .content #bio-link,
+.navdata:has(#contact:target) ~ .content #contact-link,
+.navdata:not(:has(:target)) ~ .content #work-link {
   color: #000;
 }
