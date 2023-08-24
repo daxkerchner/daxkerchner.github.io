@@ -51,7 +51,7 @@ div, section, footer, img, video, form {
   background-color: inherit;
 }
 
-@media (max-width: 1023px) {
+@media (max-width: 767px) {
   .content {
     width: 100%;
   }
@@ -117,13 +117,6 @@ nav>a:hover {
   color: #c0a080;
 }
 
-@media (max-width: 1023px) {
-  header, nav {
-    flex-direction: column;
-    gap: 1rem;
-  }
-}
-
 h1, h2 {
   font-weight: normal;
 }
@@ -134,8 +127,32 @@ h1 {
   letter-spacing: 2px;
 }
 
-h1 a, h1 a:hover, h1 a:visited {
+header>a, header>a:hover, header>a:visited {
   color: #000;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.burger {
+  display: none;
+  line-height: 1.3em;
+  padding-right: 1.5rem;
+}
+
+@media (max-width: 767px) {
+  header, nav {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+
+  .burger {
+    display: block;
+  }
 }
 
 h2 {
@@ -218,7 +235,7 @@ form>div {
   flex-wrap: wrap;
 }
 
-@media (max-width: 1023px) {
+@media (max-width: 767px) {
   form>div>* {
     width: 100%;
   }
@@ -313,4 +330,18 @@ main>div {
 
 .navdata:not(:has(:target)) ~ .content nav {
   transform: scale(1.5) translate(-25%, 200%);
+}
+
+@media (max-width: 767px) {
+  .navdata:not(:has(:target)) ~ .content nav {
+    transform: scale(1) translate(0, 2em);
+  }
+
+  .navdata:has(:target) ~ .content nav {
+    display: none;
+  }
+
+  main>div {
+    transition: none;
+  }
 }
