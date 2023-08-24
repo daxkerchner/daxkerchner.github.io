@@ -39,30 +39,16 @@ div, section, footer, img, video, form {
 }
 
 .content {
-  width: max(66%, 1024px);
+  width: max(50%, 768px);
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: 2fr 5fr;
+  display: flex;
+  flex-direction: column;
   gap: 1em;
-}
-
-.content>:first-child {
-  grid-column-end: span 2;
 }
 
 @media (max-width: 1023px) {
   .content {
     width: 100%;
-    grid-template-columns: 2fr 3fr;
-  }
-  .photo {
-    order: -1;
-  }
-  .content>:first-child {
-    grid-column-end: span 1;
-  }
-  .content>:last-child {
-    grid-column-end: span 2;
   }
 }
 
@@ -79,7 +65,7 @@ article>section, form, .two-panel, video {
   margin-bottom: 1em;
 }
 
-section>:first-child, form>:first-child {
+section>:first-child, section>p:first-of-type, form>:first-child {
   margin-top: 0;
 }
 
@@ -104,7 +90,7 @@ header {
 
 nav {
   display: flex;
-  gap: 3rem;
+  gap: 2rem;
 }
 
 nav>a {
@@ -191,8 +177,14 @@ strong a {
 
 .two-panel {
   display: grid;
-  grid-template-columns: 5fr 1fr;
+  grid-template-columns: 1fr 5fr;
   gap: 1em;
+}
+
+.me-jpg {
+  float: right;
+  width: 30%;
+  margin-left: 1rem;
 }
 
 form>* {
