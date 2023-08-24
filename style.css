@@ -86,6 +86,7 @@ section>:first-child, form>:first-child {
 footer {
   background: linear-gradient(#ffffffff, #ffffffff);
   padding-top: 1em;
+  padding-bottom: 1em;
   display: flex;
   flex-direction: column;
 }
@@ -264,6 +265,13 @@ main>div {
   position: relative;
   left: 0;
   transition: left 250ms linear;
+}
+
+header:has(#work ~ :target) ~ main #work-content,
+header:not(:has(#music:target)) ~ main #music-content,
+header:not(:has(#bio:target)) ~ main #bio-content,
+header:not(:has(#contact:target)) ~ main #contact-content {
+  height: 0;
 }
 
 header:has(#music:target) ~ main>div {
