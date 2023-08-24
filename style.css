@@ -3,6 +3,7 @@
 body, button {
   font-family: 'Marcellus', sans-serif;
   background-color: #f4f0ec;
+  margin: 0;
 }
 
 input, textarea, button {
@@ -33,34 +34,34 @@ a:hover, summary:hover {
   color: #a0a0ff;
 }
 
-div, main, footer, img, video, form {
+div, section, footer, img, video, form {
   border-radius: 6px;
 }
 
-body>div {
+.content {
   width: max(66%, 1024px);
-  margin: 1em auto;
+  margin: 0 auto;
   display: grid;
   grid-template-columns: 2fr 5fr;
   gap: 1em;
 }
 
-body>div>:first-child {
+.content>:first-child {
   grid-column-end: span 2;
 }
 
 @media (max-width: 1023px) {
-  body>div {
+  .content {
     width: 100%;
     grid-template-columns: 2fr 3fr;
   }
   .photo {
     order: -1;
   }
-  body>div>:first-child {
+  .content>:first-child {
     grid-column-end: span 1;
   }
-  body>div>:last-child {
+  .content>:last-child {
     grid-column-end: span 2;
   }
 }
@@ -69,13 +70,16 @@ img {
   width: 100%;
 }
 
-main, form {
+section, form {
   padding: 1em;
-  margin-bottom: 1em;
   background: linear-gradient(#ffffffff, #ffffffff);
 }
 
-main>:first-child, form>:first-child {
+article>section, form, .two-panel, video {
+  margin-bottom: 1em;
+}
+
+section>:first-child, form>:first-child {
   margin-top: 0;
 }
 
@@ -91,12 +95,44 @@ footer p {
   font-style: italic;
 }
 
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+nav {
+  display: flex;
+  gap: 3rem;
+}
+
+nav>a {
+  font-size: 1.5em;
+  display: flex;
+  align-items: flex-end;
+}
+
+nav>a, nav>a:visited, label {
+  color: #806040;
+}
+
+nav>a:hover {
+  color: #c0a080;
+}
+
+@media (max-width: 1023px) {
+  header, nav {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
 h1, h2 {
   font-weight: normal;
 }
 
 h1 {
-  margin: 0;
+  margin: 1rem 0 0;
   font-size: 3em;
   letter-spacing: 2px;
 }
@@ -141,9 +177,21 @@ strong a {
   text-shadow: 1px 0px #a0a0ff;
 }
 
+.work-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.work-header>:first-child {
+  flex-basis: 100%;
+  text-shadow: 1px 0px black;
+}
+
 .two-panel {
   display: grid;
   grid-template-columns: 5fr 1fr;
+  gap: 1em;
 }
 
 form>* {
@@ -182,10 +230,6 @@ input, textarea {
   padding: 6px 12px;
 }
 
-label {
-  color: #a08060;
-}
-
 button {
   border: none;
   background-color: #504030;
@@ -199,4 +243,41 @@ button {
 
 button:hover, button:focus {
   background-color: #a08060;
+}
+
+/* nav */
+
+input.nav {
+  display: none;
+}
+
+main {
+  position: relative;
+  overflow: hidden;
+}
+
+main>div {
+  width: 400%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 0;
+  position: relative;
+  left: 0;
+  transition: left 250ms linear;
+}
+
+header:has(#music:target) ~ main>div {
+  left: -100%;
+}
+
+header:has(#bio:target) ~ main>div {
+  left: -200%;
+}
+
+header:has(#contact:target) ~ main>div {
+  left: -300%;
+}
+
+nav>a:target, nav>:first-child:not(:has(~ :target)) {
+  color: #000;
 }
