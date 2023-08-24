@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Marcellus:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
+/* General properties for a nicely-styled site */
+
 html {
   overflow-y: scroll;
 }
@@ -17,27 +19,6 @@ input, textarea, button {
   border: 2px solid #d0c0b0;
 }
 
-a {
-  text-decoration: none;
-}
-
-a[target="_blank"] {
-  text-decoration: underline;
-}
-
-a, a:visited {
-  color: #6060ff;
-}
-
-summary {
-  color: #6060ff;
-  cursor: pointer;
-}
-
-a:hover, summary:hover {
-  color: #a0a0ff;
-}
-
 div, section, footer, img, video, form {
   border-radius: 6px;
 }
@@ -51,41 +32,57 @@ div, section, footer, img, video, form {
   background-color: inherit;
 }
 
-@media (max-width: 767px) {
-  .content {
-    width: 100%;
-  }
+section, form {
+  padding: 1em;
+  background-color: #ffffff;
 }
 
 img {
   width: 100%;
 }
 
-section, form {
-  padding: 1em;
-  background: linear-gradient(#ffffffff, #ffffffff);
+@media (max-width: 767px) {
+  .content {
+    width: 100%;
+  }
 }
 
-article>section, form, .two-panel, video {
+/* Text formatting of different types */
+
+a {
+  text-decoration: none;
+}
+
+a[target="_blank"] {
+  text-decoration: underline;
+}
+
+a, a:visited {
+  color: #6060ff;
+}
+
+a:hover, summary:hover {
+  color: #a0a0ff;
+}
+
+h1, h2 {
+  font-weight: normal;
+}
+
+li {
   margin-bottom: 1em;
 }
 
-section>:first-child, section>p:first-of-type, form>:first-child {
-  margin-top: 0;
+strong {
+  font-weight: normal;
+  text-shadow: 1px 0px black;
 }
 
-footer {
-  background: linear-gradient(#ffffffff, #ffffffff);
-  padding-top: 1em;
-  padding-bottom: 1em;
-  display: flex;
-  flex-direction: column;
+strong a {
+  text-shadow: 1px 0px #a0a0ff;
 }
 
-footer p {
-  margin: 0 1em 1em;
-  font-style: italic;
-}
+/* Header & navigation */
 
 header {
   display: flex;
@@ -95,6 +92,25 @@ header {
   top: 0;
   z-index: 1;
   background-color: inherit;
+}
+
+header>a, header>a:hover, header>a:visited {
+  color: #000;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+h1 {
+  margin: 1rem 0 0;
+  font-size: 3em;
+  letter-spacing: 2px;
+}
+
+.burger {
+  display: none;
+  line-height: 1.3em;
+  padding-right: 1.5rem;
 }
 
 nav {
@@ -117,29 +133,6 @@ nav>a:hover {
   color: #c0a080;
 }
 
-h1, h2 {
-  font-weight: normal;
-}
-
-h1 {
-  margin: 1rem 0 0;
-  font-size: 3em;
-  letter-spacing: 2px;
-}
-
-header>a, header>a:hover, header>a:visited {
-  color: #000;
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-}
-
-.burger {
-  display: none;
-  line-height: 1.3em;
-  padding-right: 1.5rem;
-}
-
 @media (max-width: 767px) {
   header, nav {
     flex-direction: column;
@@ -155,44 +148,87 @@ header>a, header>a:hover, header>a:visited {
   }
 }
 
-h2 {
-  font-size: 2em;
-  margin: 1rem auto 1rem;
+/* Some nice form styling, inspired by Material Design */
+
+form>* {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-details {
-  display: inline;
-}
-
-details[open] {
-  margin-top: 1em;
-}
-
-details[open]>summary {
-  margin-bottom: 1em;
-}
-
-details ul {
+form>p {
   font-style: italic;
 }
 
-ul {
-  margin-top: 0;
-  margin-bottom: 0;
+input, textarea {
+  padding: 6px 12px;
 }
 
-li {
-  margin-right: 1em;
+form>div {
+  display: flex;
+  gap: 1em;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+form>div>input {
+  flex: 1;
+}
+
+form>label {
+  margin-top: 1em;
   margin-bottom: 1em;
 }
 
-strong {
-  font-weight: normal;
-  text-shadow: 1px 0px black;
+@media (max-width: 767px) {
+  form>div>* {
+    width: 100%;
+  }
 }
 
-strong a {
-  text-shadow: 1px 0px #a0a0ff;
+button {
+  border: none;
+  background-color: #504030;
+  color: #ffffff;
+  margin: 1em 0 0 auto;
+  padding: .5em;
+  width: 33%;
+  text-shadow: 1px 0px white;
+  cursor: pointer;
+}
+
+button:hover, button:focus {
+  background-color: #a08060;
+}
+
+/* Specific CSS to the sections in my website.
+There are hardly any classes outside this section!
+Semantic HTML and simple selectors usually do the job. */
+
+article>section, form, .two-panel, video {
+  margin-bottom: 1em;
+}
+
+section>:first-child, section>p:first-of-type, form>:first-child {
+  margin-top: 0;
+}
+
+.spotify {
+  background-color: #ffffff;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  display: flex;
+  flex-direction: column;
+}
+
+.spotify p {
+  margin: 0 1em 1em;
+  font-style: italic;
+}
+
+h2 {
+  font-size: 2em;
+  margin: 1rem auto 1rem;
 }
 
 .work-header {
@@ -218,58 +254,8 @@ strong a {
   margin-left: 1rem;
 }
 
-form>* {
-  display: block;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-form>p {
-  font-style: italic;
-}
-
-form>div {
-  display: flex;
-  gap: 1em;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-@media (max-width: 767px) {
-  form>div>* {
-    width: 100%;
-  }
-}
-
-form>div>input {
-  flex: 1;
-}
-
-form>label {
-  margin-top: 1em;
-  margin-bottom: 1em;
-}
-
-input, textarea {
-  padding: 6px 12px;
-}
-
-button {
-  border: none;
-  background-color: #504030;
-  color: #ffffff;
-  margin: 1em 0 0 auto;
-  padding: .5em;
-  width: 33%;
-  text-shadow: 1px 0px white;
-  cursor: pointer;
-}
-
-button:hover, button:focus {
-  background-color: #a08060;
-}
-
-/* nav */
+/* This section handles the fancy animation when navigating the site on desktop.
+There is a giant div (main>div) that <main> only displays a piece of at any given time. */
 
 .navdata {
   display: none;
@@ -320,8 +306,6 @@ main>div {
   color: #000;
 }
 
-/* nav landing page */
-
 #landing p {
   margin: .67em auto;
   text-align: center;
@@ -333,15 +317,15 @@ main>div {
 }
 
 @media (max-width: 767px) {
-  .navdata:not(:has(:target)) ~ .content nav {
-    transform: scale(1) translate(0, 2em);
+  main>div {
+    transition: none;
   }
 
   .navdata:has(:target) ~ .content nav {
     display: none;
   }
 
-  main>div {
-    transition: none;
+  .navdata:not(:has(:target)) ~ .content nav {
+    transform: scale(1) translate(0, 2em);
   }
 }
