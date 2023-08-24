@@ -95,6 +95,9 @@ header {
 nav {
   display: flex;
   gap: 2rem;
+  z-index: 1;
+  transform: scale(1) translate(0, 0);
+  transition: all 250ms linear;
 }
 
 nav>a {
@@ -125,6 +128,10 @@ h1 {
   margin: 1rem 0 0;
   font-size: 3em;
   letter-spacing: 2px;
+}
+
+h1 a, h1 a:hover, h1 a:visited {
+  color: #000;
 }
 
 h2 {
@@ -253,38 +260,53 @@ main {
 }
 
 main>div {
-  width: 400%;
+  width: 500%;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   gap: 0;
   position: relative;
   left: 0;
   transition: left 250ms linear;
 }
 
-.navdata:has(#work ~ :target) ~ .content #work-content,
+.navdata:not(:has(#work:target)) ~ .content #work-content,
 .navdata:not(:has(#music:target)) ~ .content #music-content,
 .navdata:not(:has(#bio:target)) ~ .content #bio-content,
 .navdata:not(:has(#contact:target)) ~ .content #contact-content {
   height: 0;
 }
 
-.navdata:has(#music:target) ~ .content>main>div {
+.navdata:has(#work:target) ~ .content>main>div {
   left: -100%;
 }
 
-.navdata:has(#bio:target) ~ .content>main>div {
+.navdata:has(#music:target) ~ .content>main>div {
   left: -200%;
 }
 
-.navdata:has(#contact:target) ~ .content>main>div {
+.navdata:has(#bio:target) ~ .content>main>div {
   left: -300%;
+}
+
+.navdata:has(#contact:target) ~ .content>main>div {
+  left: -400%;
 }
 
 .navdata:has(#work:target) ~ .content #work-link,
 .navdata:has(#music:target) ~ .content #music-link,
 .navdata:has(#bio:target) ~ .content #bio-link,
-.navdata:has(#contact:target) ~ .content #contact-link,
-.navdata:not(:has(:target)) ~ .content #work-link {
+.navdata:has(#contact:target) ~ .content #contact-link {
   color: #000;
+}
+
+/* nav landing page */
+
+#landing p {
+  margin: .67em auto;
+  text-align: center;
+  font-size: 12rem;
+}
+
+.navdata:not(:has(:target)) ~ .content nav {
+  transform: scale(1.5) translate(-25%, 200%);
 }
