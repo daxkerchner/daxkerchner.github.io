@@ -209,7 +209,7 @@ article>section, form, .two-panel, video {
   margin-bottom: 1em;
 }
 
-section>:first-child, section>p:first-of-type, form>:first-child {
+section>:first-child, .me-jpg+p, form>:first-child {
   margin-top: 0;
 }
 
