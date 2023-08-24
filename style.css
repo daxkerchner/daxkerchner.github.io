@@ -48,6 +48,7 @@ div, section, footer, img, video, form {
   display: flex;
   flex-direction: column;
   gap: 1em;
+  background-color: inherit;
 }
 
 @media (max-width: 1023px) {
@@ -90,12 +91,15 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: inherit;
 }
 
 nav {
   display: flex;
   gap: 2rem;
-  z-index: 1;
   transform: scale(1) translate(0, 0);
   transition: all 250ms linear;
 }
