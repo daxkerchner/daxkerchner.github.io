@@ -117,7 +117,6 @@ nav {
   display: flex;
   gap: 2rem;
   transform: scale(1) translate(0, 0);
-  transition: all 250ms linear;
 }
 
 nav>a {
@@ -314,6 +313,11 @@ main>div {
 
 .navdata:not(:has(:target)) ~ .content nav {
   transform: scale(1.5) translate(-25%, 200%);
+}
+
+/* this selector (instead of just nav) is a hack to prevent animation on first load */
+header:hover nav, .navdata:has(:target) ~ .content nav {
+  transition: transform 250ms linear;
 }
 
 @media (max-width: 767px) {
